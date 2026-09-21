@@ -1,0 +1,74 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+local.properties
+.idea/
+*.iml
+
+# Kotlin/Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Android
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+*.aab
+
+# Generated files
+generated/
+bin/
+gen/
+
+# Gradle wrapper
+gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio
+*.hprof
+*.log
+.DS_Store
+
+# Keystore files
+*.jks
+*.keystore
+
+# IntelliJ
+out/
+
+# Misc
+*.orig
+*.rej
+
+# JetBrains
+.idea/
+.idea/**
+
+# Kotlin specific
+.kotlin_module
+
+# Crashlytics / Fabric
+crashlytics.properties
+fabric.properties
+
+# Google Services
+google-services.json
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Node (if present)
+node_modules/
+
+# Ignore local env files
+.env
