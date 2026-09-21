@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub Portfolio</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <meta name="description" content="Simple responsive app to save a GitHub username and list public repositories with share support. Dark mode default." />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 id="app-title">GitHub Portfolio</h1>
+
+      <div class="controls" aria-hidden="false">
+        <label for="lang" class="visually-hidden">Language</label>
+        <select id="lang" aria-label="Language selector">
+          <option value="en-US">English</option>
+          <option value="pt-BR">Português (BR)</option>
+          <option value="es">Español</option>
+        </select>
+
+        <button id="theme-toggle" aria-pressed="true" aria-label="Toggle dark or light mode">
+          <!-- Moon (dark) and Sun (light) icons are inline SVG for accessibility -->
+          <span class="icon icon-moon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="icon icon-sun" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true">
+              <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.03-2.03l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM4.22 19.78l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM12 6a6 6 0 100 12 6 6 0 000-12z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+    <section aria-labelledby="intro-title" class="intro">
+      <h2 id="intro-title">Save GitHub Username</h2>
+      <p id="intro-desc">Enter a GitHub username to list public repositories. The username is saved locally and can be reset.</p>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-title">
+      <h3 id="form-title">User</h3>
+
+      <form id="user-form" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="username" id="label-username">Username</label>
+          <input id="username" name="username" type="text" inputmode="text" aria-labelledby="label-username" placeholder="octocat" />
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btn-confirm" class="primary">Confirm</button>
+          <button type="button" id="btn-open-saved">Open Saved</button>
+          <button type="button" id="btn-reset" class="danger">Reset</button>
+        </div>
+
+        <p id="saved-info" class="muted" aria-live="polite">No username saved</p>
+      </form>
+    </section>
+
+    <section class="results" aria-labelledby="results-title">
+      <h3 id="results-title">Results</h3>
+      <div id="status" role="status" aria-live="polite" class="muted">No results</div>
+
+      <ul id="repo-list" class="repo-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small id="footer-text">Developed by Nivaldo Beirão</small>
+    </div>
+  </footer>
+
+  <script src="./src/script.js" defer></script>
+</body>
+</html>
